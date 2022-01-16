@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>For & IF</title>
+        <style>
+            #screen {
+                position:relative;
+                width:250px;
+                height:200px;
+                border-radius:20px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-size:18px;
+                font-weight:bold;
+                text-align: center;
+                word-break:keep-all;
+                margin:100px auto 0;
+            }
+            #screen:before{
+                content:'';
+                position:absolute;
+                left:0;
+                right:0;
+                top:0;
+                bottom:0;
+                border-radius:20px;
+                border:1px solid rgba(0,0,0,0.2);
+            }
+            .wating{
+                background-color:aqua;
+            }
+            .ready{
+                background-color:red;
+                color:#fff;
+            }
+            .now{
+                background-color:greenyellow;
+            }
+            .text{
+                display:block;
+                margin-top:50px;
+                font-size:13px;
+                font-weight:600;
+                text-align:center;
+            }
+            button{
+                z-index:2;
+                border:1px solid #000;
+                background:#fff;
+                border-radius:1px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="./dist/app.js"></script>
+    </body>
+</html>

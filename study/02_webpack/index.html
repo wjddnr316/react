@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>webpack</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <hr />
+        <br />
+        <h3>WEBPACK 공식 문서 : <a href="https://webpack.js.org/concepts/" target="_blink">https://webpack.js.org/concepts/</a></h3>
+        <ol>
+            <li>node 설치</li>
+            <li>npm init</li>
+            <li>npm i react react-dom</li>
+            <!-- -D 는 development 를 의미 실서비스에는 필요없음 개발환경에서만 필요-->
+            <li>npm i -D webpack webpack-cli</li>
+            <li>webpack.config.js 파일 생성
+                <ul>
+                    <!-- -->
+                    <li>module.exports = {}</li>
+                </ul>
+            </li>
+            <li>client.jsx 파일 생성
+                <ul>
+                    <!-- -->
+                    <li>const React = require('react'); const ReactDom = require('react-dom');</li>
+                </ul>
+            </li>
+            <li>index.html 파일 생성 후 root 생성</li>
+            <li>webpack config 파일 설정 </li>
+            <li>JSX 문법을 사용하기 위해선 babel이 필요 npm i -D   
+                <ul>
+                    <li>@babel/core 최신문법 바꿔주는 애</li>
+                    <li>@babel/preset-env 내 환경에 맞게 바꿔주는 애</li>
+                    <li>@babel/preset-react</li>
+                    <li>@babel/plugin-proposal-class-properties</li>
+                    <li>babel-loader 바벨이랑 웹팩 연결해주는 애</li>
+                </ul>
+            </li>
+            <li>webpack config 에 module 옵션 추가 </li>
+            <li>npx webpack 실행 후 index.html 열어서 확인</li>
+        </ol>
+        <h3>hot reloading 사용법(자동 수정 감지하여 수정된 부분만 바뀌는것 reloading이랑은 다르게 데이터 유지됨)</h3>
+        <ol>
+            <li>npm i - D webpack-dev-sevrer </li>
+            <li>npm i - D react-refresh</li>
+            <li>npm i - D @pmmmwh/react-refresh-webpack-plugin</li>
+            <li>webpack config 에서 output 에 publicPath 추가 및 devServer 추가</li>
+            <li>module plugins 에 'react-refresh/babel' 추가</li>
+            <li>refresh-webpack-plugin 을 require시켜주고 plugins에 require시킨 거 추가</li>
+        </ol>
+        <script src="./dist/app.js"></script>
+    </body>
+</html>

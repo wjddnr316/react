@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>props</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <h3>require 와 import 는 호환되지만 node 는 import를 인식하지 못하기 때문에 webpack 에서는 requrie로 사용</h3>
+        <ol>
+            <li> const로 exports 시 사용 시 변수명만 안겹치면 여러번 사용 가능</li>
+            <li> default 사용시 한번만 사용 가능</li>
+            <li> export default 와 module.exports 가 호환은 되지만 깊게 들어가면 살짝 다른것 염두해두자. </li>
+            <li> Props는 자식에서 바꾸지 않는다. 만약 자식에서 props 를 바꿔야 하는 상황이면 props를 state로 만들어서 바꾸자</li>
+        </ol>
+        <script src="./dist/app.js"></script>
+    </body>
+</html>
