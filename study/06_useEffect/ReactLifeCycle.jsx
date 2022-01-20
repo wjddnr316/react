@@ -23,33 +23,36 @@ const computerChoice = (imgCoord) => {
     })[0];
 };
 
+
 class RSP extends Component{
     state ={
         result: '',
         score:0,
-        imgCoord:'0',
+        imgCoord:rspCoords.바위,
     };
 
     interval;
+    
+    changeHand = () => {
+        const {imgCoord} = this.state;
+        if(imgCoord === rspCoords.바위){
+            this.setState({
+                imgCoord: rspCoords.가위,
+            })
+        }else if (imgCoord === rspCoords.가위){
+            this.setState({
+                imgCoord: rspCoords.보,
+            })
+        }else if (imgCoord === rspCoords.보){
+            this.setState({
+                imgCoord: rspCoords.바위,
+            });
+        }
+    }
+
     // setState 로 리랜더링 되더라도 Mount 는 실행되지 않음. 
     componentDidMount() { // 컴포넌트가 첫 랜더링 된 후
-        this.interval = setInterval(() => {
-            const {imgCoord} = this.state;
-            console.log('hello', );
-            if(imgCoord === rspCoords.바위){
-                this.setState({
-                    imgCoord: rspCoords.가위,
-                })
-            }else if (imgCoord === rspCoords.가위){
-                this.setState({
-                    imgCoord: rspCoords.보,
-                })
-            }else if (imgCoord === rspCoords.보){
-                this.setState({
-                    imgCoord: rspCoords.바위,
-                });
-            }
-        }, 1000);
+        this.interval = setInterval(this.changeHand, 200);
     }
 
     // shouldComponentUpdate( nextProps, nextState, nextContext) {
@@ -65,6 +68,7 @@ class RSP extends Component{
     }
 
     onClickBtn = (choice) => {
+        const {imgCoord} = this.state;
         clearInterval(this.interval);
         const myScore = score[choice];
         const cpuScore = score[computerChoice(imgCoord)];
@@ -90,7 +94,11 @@ class RSP extends Component{
                 };
             });
         }
-    }
+        setTimeout(()=>{
+            this.interval = setInterval(this.changeHand, 200);
+        },2000)
+        
+    };
 
     render(){
         const {result,score,imgCoord} = this.state;
