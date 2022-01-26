@@ -9,9 +9,10 @@ const RSP = memo(() =>{
     // },[]) []가 없으면 ComponentDidMount / []가 있으면 ComponentDidUpdate 가 됨.
     useEffect(()=>{
         console.log('시작');
-        return( // compoenetWillUnmount 역할
+        return()=>{
             console.log('종료')
-        )
+        } // compoenetWillUnmount 역할
+        
     },[result])
 
     const onInputChange = (e) => {

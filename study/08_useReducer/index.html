@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Use Reducer</title>
+        <style>
+            table{
+                border-collapse:collapse;
+            }
+            td{
+                border:1px solid #000;
+                width:40px;
+                height:40px;
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+        <h2>사용환경</h2>
+        <ul>
+            <li>규모가 작은 프로젝트의 경우 리덕스 기능을 흉내낼 수 있는 useReducer / useContext 기능을 활용함</li>
+            <li>하지만 규모가 클 경우는 리덕스를 어차피 사용해야 함.</li>
+        </ul>
+        <h2>사용 목적</h2>
+        <ul>
+            <li>컴포넌트가 2depth 가 아니라 3depth 이상일 경우 props와 state를 편하게 쓰기 위함이다.</li>
+            <li>state가 많아질 경우</li>
+        </ul>
+        <script src="./dist/app.js"></script>
+    </body>
+</html>

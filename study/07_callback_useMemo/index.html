@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>로또 추첨기</title>
+        <style>
+            .ball{
+                display:inline-block;
+                border:1px solid #000;
+                border-radius:50%;
+                width:40px;
+                height:40px;
+                line-height:40px;
+                font-size:20px;
+                text-align:center;
+                margin-right:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+        <ul>
+            <li><strong>useMemo</strong> : 복잡한 함수 결과값(<i>return 값</i>)을 기억
+                <ul>
+                    <li>사용법은 const 변수명 = useMemo (() => function(), [여기에 값이 바뀌면 다시 실행])</li>
+                </ul>
+            </li>
+
+            <br>
+
+            <li><strong>useRef</strong> : 일반 값을 기억</li>
+
+            <br>
+
+            <li><strong>useCallback</strong> : 함수를 기억
+                <ul>
+                    <li>자식컴포넌트에 함수를 state로 넘겨야 할 경우 useCallback을 꼭 써야함</li>
+                    <li>useCallback을 쓰지 않을경우 자식 컴포넌트에서 계속 새로운 props 함수를 전달하는것으로 인식하여 계속 랜더링이 발생함</li>
+                </ul>
+            </li>
+        </ul>
+        <h2>hooks 에 관한 TIP !</h2>
+        <p>hooks 를 조건문 / 함수 / 반복문에 되도록이면 넣지 말자.</p>
+        <p>hooks 사용시 꼭 순서를 지키고 최상위에다가 선언하도록 하자. 그리고 아래 사용하는 순서에 맞춰 hooks 순서를 배치</p>
+        <script src="./dist/app.js"></script>
+    </body>
+</html>

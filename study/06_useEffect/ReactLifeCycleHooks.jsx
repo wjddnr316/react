@@ -34,6 +34,16 @@ const RSP = () =>{
         }   
     }, [imgCoord])
 
+    // componenetDidupdate 에서만 실행하고 싶을경우 꼼수
+    const mounted = useRef(false);
+    useEffect(()=>{
+        if(!mounted.current){
+            mounted.current = true;
+        }else{
+            // 원하는 거 작성
+        }
+    },[바뀔 경우 실행]); 
+
     const changeHand = () => {
         if(imgCoord === rspCoords.바위){
             setImgCoord(rspCoords.가위);
